@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="75 Day Better — six small things a day for 75 days. Miss one and you start over. $14.99 one time.">
+<meta name="theme-color" content="#2F4438" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A241E" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta property="og:title" content="75 Day Better">
+<meta property="og:description" content="Six small things a day for 75 days. Miss one and you go back to Day 1 — which is exactly why it works.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/icons/icon-512.png">
+<style>html{color-scheme:light dark}img{max-width:100%}</style>
+<title>75 Day Better</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+:root{
+  /* palette: forest #2F4438 · pale #EAEFEA · white #FFFFFF · grey #DEDEDE · mint #A9DC9E */
+  --bg:#EAEFEA;
+  --bg-tint:#E1E7E1;
+  --surface:#FFFFFF;
+  --surface-2:#DEE2DD;
+  --ink:#26362C;
+  --ink-2:#57685C;
+  --ink-3:#87958B;
+  --rule:#D3DAD3;
+  --rule-strong:#B4BFB6;
+  --accent:#2F4438;
+  --accent-ink:#FFFFFF;
+  --mint:#A9DC9E;
+  --mint-ink:#26362C;
+  --drain:#DEDEDE;
+  --invert-bg:#2F4438;
+  --invert-ink:#EAEFEA;
+  --shadow:0 1px 0 rgba(47,68,56,.08), 0 12px 26px -18px rgba(47,68,56,.5);
+  --grid-line:rgba(47,68,56,.055);
+
+  --f-display:"Archivo Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A241E;
+    --bg-tint:#1F2A23;
+    --surface:#222E27;
+    --surface-2:#2B3830;
+    --ink:#EAEFEA;
+    --ink-2:#A8B5AC;
+    --ink-3:#7F8D84;
+    --rule:#33423A;
+    --rule-strong:#4A5B51;
+    --accent:#A9DC9E;
+    --accent-ink:#1A241E;
+    --mint:#A9DC9E;
+    --mint-ink:#1A241E;
+    --drain:#3B4842;
+    --invert-bg:#EAEFEA;
+    --invert-ink:#26362C;
+    --shadow:0 1px 0 rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.9);
+    --grid-line:rgba(234,239,234,.045);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A241E;
+  --bg-tint:#1F2A23;
+  --surface:#222E27;
+  --surface-2:#2B3830;
+  --ink:#EAEFEA;
+  --ink-2:#A8B5AC;
+  --ink-3:#7F8D84;
+  --rule:#33423A;
+  --rule-strong:#4A5B51;
+  --accent:#A9DC9E;
+  --accent-ink:#1A241E;
+  --mint:#A9DC9E;
+  --mint-ink:#1A241E;
+  --drain:#3B4842;
+  --invert-bg:#EAEFEA;
+  --invert-ink:#26362C;
+  --shadow:0 1px 0 rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.9);
+  --grid-line:rgba(234,239,234,.045);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:26px 26px;
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;letter-spacing:-.01em;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:2px}
+.eyebrow{
+  font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);
+}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.masthead{
+  border-bottom:1px solid var(--rule);
+  background:color-mix(in srgb,var(--bg) 80%,transparent);
+  backdrop-filter:blur(6px);
+  position:sticky;top:0;z-index:20;
+}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.mark{display:flex;align-items:baseline;gap:9px}
+.mark b{font-family:var(--f-display);font-size:17px;letter-spacing:-.02em}
+.mark span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+.mh-right{display:flex;align-items:center;gap:14px}
+.mh-note{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.04em}
+@media(max-width:700px){.mh-note{display:none}}
+
+.btn{
+  font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 16px;border-radius:2px;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);cursor:pointer;text-decoration:none;display:inline-block;
+  transition:transform .12s ease, filter .12s ease;
+}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.btn.ghost:hover{border-color:var(--ink-2);filter:none}
+.btn.sm{padding:8px 12px;font-size:11.5px}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;filter:none}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero{padding:38px 0 28px}}
+h1{font-size:clamp(38px,6.2vw,66px);line-height:.96;letter-spacing:-.025em;margin:14px 0 0}
+h1 .thin{display:block;font-family:var(--f-body);font-weight:400;font-style:italic;
+  font-size:clamp(20px,2.6vw,27px);line-height:1.25;letter-spacing:0;color:var(--ink-2);margin-top:16px}
+.lede{margin-top:22px;font-size:19px;line-height:1.55;max-width:34em;color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.stamp{
+  display:inline-flex;gap:8px;align-items:center;font-family:var(--f-mono);font-size:11.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);
+  border:1px dashed var(--rule-strong);padding:5px 9px;border-radius:2px;
+}
+
+/* ---------- console ---------- */
+.console{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.console-top{
+  display:flex;align-items:stretch;justify-content:space-between;gap:14px;
+  padding:16px 18px;border-bottom:1px solid var(--rule);background:var(--surface-2);
+}
+.daycount{display:flex;align-items:baseline;gap:8px}
+.daycount .n{font-family:var(--f-display);font-size:46px;line-height:.82;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.daycount .of{font-family:var(--f-mono);font-size:13px;color:var(--ink-2)}
+.streakbox{text-align:right;display:flex;flex-direction:column;gap:3px;justify-content:center}
+.streakbox .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.streakbox .v{font-family:var(--f-mono);font-size:14px;font-weight:600}
+
+.checklist{list-style:none;margin:0;padding:0}
+.check{
+  display:grid;grid-template-columns:26px 1fr auto;gap:13px;align-items:center;
+  padding:13px 18px;border-bottom:1px solid var(--rule);cursor:pointer;width:100%;
+  background:none;border-left:0;border-right:0;border-top:0;text-align:left;font:inherit;color:inherit;
+  transition:background .14s ease;
+}
+.check:hover{background:var(--bg-tint)}
+.box{
+  width:22px;height:22px;border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--bg);
+  display:grid;place-items:center;flex:none;transition:all .16s ease;
+}
+.box svg{width:14px;height:14px;stroke:var(--mint-ink);stroke-width:3;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.6);transition:all .16s ease}
+.check[aria-pressed="true"] .box{background:var(--mint);border-color:var(--mint)}
+.check[aria-pressed="true"] .box svg{opacity:1;transform:scale(1)}
+.check-label{font-size:16.5px;line-height:1.35}
+.check[aria-pressed="true"] .check-label{color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--rule-strong)}
+.check-spec{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;white-space:nowrap}
+@media(max-width:430px){.check-spec{display:none}}
+
+.console-foot{padding:15px 18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.foot-msg{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);letter-spacing:.03em;flex:1;min-width:160px}
+.foot-msg.warn{color:var(--ink);font-weight:600}
+.link-btn{background:none;border:0;padding:0;font:inherit;font-family:var(--f-mono);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);cursor:pointer;text-decoration:underline;
+  text-underline-offset:3px}
+.link-btn:hover{color:var(--ink)}
+
+/* ---------- section frame ---------- */
+section{padding:64px 0;border-top:1px solid var(--rule)}
+@media(max-width:700px){section{padding:46px 0}}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:34px;max-width:62ch}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.04}
+.sec-head p{color:var(--ink-2);font-size:17.5px}
+
+/* ---------- rules table ---------- */
+.rules{border-top:1px solid var(--rule-strong)}
+.rule-row{
+  display:grid;grid-template-columns:44px 1.15fr 1fr;gap:22px;align-items:start;
+  padding:20px 0;border-bottom:1px solid var(--rule);
+}
+@media(max-width:760px){.rule-row{grid-template-columns:34px 1fr;gap:14px}.rule-row .why{grid-column:2}}
+.rule-row .idx{font-family:var(--f-mono);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.06em;padding-top:5px}
+.rule-row h3{font-size:20px;letter-spacing:-.015em}
+.rule-row .spec{font-family:var(--f-mono);font-size:12px;color:var(--ink-3);letter-spacing:.05em;margin-top:7px}
+.rule-row .why{color:var(--ink-2);font-size:16px;line-height:1.5}
+
+/* ---------- reset mechanic ---------- */
+.mech{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:center}
+@media(max-width:940px){.mech{grid-template-columns:1fr;gap:30px}}
+.mech-card{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:22px;box-shadow:var(--shadow)}
+.grid75{display:grid;grid-template-columns:repeat(15,1fr);gap:5px}
+@media(max-width:620px){.grid75{grid-template-columns:repeat(10,1fr);gap:4px}}
+.cell{
+  aspect-ratio:1;border-radius:2px;background:var(--surface-2);border:1px solid transparent;
+  display:grid;place-items:center;font-family:var(--f-mono);font-size:9.5px;color:var(--ink-3);
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.cell.done{background:var(--mint);color:var(--mint-ink);border-color:var(--mint)}
+.cell.today{background:var(--surface);color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.cell.wipe{background:var(--drain);color:var(--ink-3);border-color:var(--drain);transform:scale(.84)}
+.grid-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.lg{display:flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11px;color:var(--ink-2);letter-spacing:.05em}
+.sw{width:11px;height:11px;border-radius:2px;flex:none}
+.pull{font-family:var(--f-display);font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.02em}
+.pull em{font-family:var(--f-body);font-style:italic;font-weight:600;color:var(--mint-ink);
+  background:var(--mint);padding:0 .18em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.mech-copy p{color:var(--ink-2);margin-top:16px;font-size:17px}
+.mech-copy .btn{margin-top:22px}
+
+/* ---------- phases ---------- */
+.phases{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule-strong)}
+@media(max-width:900px){.phases{grid-template-columns:1fr;}}
+.phase{padding:22px 20px 24px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative}
+.phase:last-child{border-right:0}
+@media(max-width:900px){.phase{border-right:0}}
+.phase .days{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.09em;color:var(--ink-2)}
+.phase h3{font-size:18px;margin:9px 0 8px;letter-spacing:-.01em}
+.phase p{font-size:15.5px;color:var(--ink-2);line-height:1.5}
+.phase .bar{position:absolute;left:0;top:-1px;height:3px;background:var(--mint)}
+
+/* ---------- planner ---------- */
+.planner{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:3px;
+  background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+@media(max-width:760px){.planner{grid-template-columns:1fr}}
+.planner .pane{padding:26px}
+.planner .pane+.pane{border-left:1px solid var(--rule)}
+@media(max-width:760px){.planner .pane+.pane{border-left:0;border-top:1px solid var(--rule)}}
+label.field{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:9px}
+input[type="date"]{
+  font-family:var(--f-mono);font-size:15px;padding:11px 12px;width:100%;
+  background:var(--bg);color:var(--ink);border:1px solid var(--rule-strong);border-radius:2px;
+}
+.result{margin-top:22px;display:flex;flex-direction:column;gap:5px}
+.result .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.result .v{font-family:var(--f-display);font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;line-height:1.1}
+.result .sub{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-2)}
+
+/* ---------- offer ---------- */
+.offer{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+@media(max-width:900px){.offer{grid-template-columns:1fr;gap:30px}}
+.incl{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.incl li{padding:14px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:18px 1fr;gap:13px;align-items:start;font-size:16.5px}
+.incl li .tick{color:var(--accent);font-family:var(--f-mono);font-weight:600;font-size:14px;padding-top:2px}
+.price-card{background:var(--invert-bg);color:var(--invert-ink);border-radius:3px;padding:28px;box-shadow:var(--shadow)}
+.price-card .eyebrow{color:inherit;opacity:.62}
+.price-card .amt{font-family:var(--f-display);font-size:52px;line-height:1;letter-spacing:-.03em;margin:12px 0 4px}
+.price-card .per{font-family:var(--f-mono);font-size:12.5px;opacity:.72}
+.price-card ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.price-card li{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.03em;opacity:.86}
+.price-card .btn{width:100%;text-align:center;margin-top:22px;background:var(--mint);color:var(--mint-ink);border-color:var(--mint)}
+.price-card .fine{font-family:var(--f-mono);font-size:11px;opacity:.6;margin-top:14px;line-height:1.5}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--rule-strong);max-width:78ch}
+details{border-bottom:1px solid var(--rule)}
+summary{
+  list-style:none;cursor:pointer;padding:18px 0;display:flex;gap:16px;align-items:baseline;
+  font-family:var(--f-display);font-size:18px;letter-spacing:-.01em;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-left:auto;font-family:var(--f-mono);font-size:19px;color:var(--ink-3);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--rule);padding:38px 0 60px}
+.foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-end}
+.foot p{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);line-height:1.7;max-width:56ch}
+.safety{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--mint);
+  border-radius:2px;padding:16px 18px;margin-top:30px;max-width:70ch}
+.safety p{font-family:var(--f-body);font-size:15.5px;color:var(--ink-2);line-height:1.55}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mark"><b>75 DAY BETTER</b><span>Est. Day 1</span></div>
+    <div class="mh-right">
+      <span class="mh-note">$14.99 one-time · start any day</span>
+      <a class="btn sm js-anchor" href="#join">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="border-top:0">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">A 75-day daily checklist</span>
+      <h1>75 days to<br>feel 20 again.
+        <span class="thin">Six things a day. Every day. Miss one and you go back to Day 1 — which is exactly why it works.</span>
+      </h1>
+      <p class="lede">Not a bootcamp and not a diet. Six small things — none of them longer than fifteen minutes — held to a standard strict enough that your brain stops negotiating with them.</p>
+      <div class="hero-cta">
+        <a class="btn js-anchor" href="#join">Start Day 1</a>
+        <span class="stamp">No partial credit</span>
+      </div>
+    </div>
+
+    <div class="console" id="console">
+      <div class="console-top">
+        <div class="daycount">
+          <span class="n mono" id="dayNum">01</span>
+          <span class="of">/ 75</span>
+        </div>
+        <div class="streakbox">
+          <span class="k">Today</span>
+          <span class="v mono" id="doneCount">0 of 6 done</span>
+        </div>
+      </div>
+      <ul class="checklist" id="checklist"></ul>
+      <div class="console-foot">
+        <span class="foot-msg" id="footMsg">Try it — tick all six to log the day.</span>
+        <button class="btn sm" id="logBtn" disabled>Log day</button>
+        <button class="link-btn" id="missBtn">I missed one</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The list</span>
+      <h2>Six things, non-negotiable, every single day.</h2>
+      <p>None of them takes more than fifteen minutes. The difficulty isn't any one of them — it's doing all six on the day you don't want to.</p>
+    </div>
+    <div class="rules">
+      <div class="rule-row">
+        <span class="idx">01</span>
+        <div><h3>Wake up with intention</h3><div class="spec">SAME TIME DAILY · NO SNOOZE · 7 DAYS</div></div>
+        <p class="why">One fixed wake time, weekends included. Not early for its own sake — the same, so your body stops guessing what today is.</p>
+      </div>
+      <div class="rule-row">
+        <span class="idx">02</span>
+        <div><h3>Ten minutes of grounding</h3><div class="spec">10 MIN · BEFORE THE FIRST SCREEN</div></div>
+        <p class="why">Breath, stillness, sun on your face, bare feet on the floor — whatever grounding means for you. The only condition is that it happens before the phone does.</p>
+      </div>
+      <div class="rule-row">
+        <span class="idx">03</span>
+        <div><h3>100 oz of water</h3><div class="spec">100 OZ · 3 L · TRACKED</div></div>
+        <p class="why">The one people underestimate. Fill the jug in the morning and finish it before you wind down; it's a logistics problem, not a discipline problem.</p>
+      </div>
+      <div class="rule-row">
+        <span class="idx">04</span>
+        <div><h3>Fiber and protein, three times</h3><div class="spec">3 MEALS · BOTH IN EACH · NOTHING COUNTED</div></div>
+        <p class="why">Nothing is off the table and nothing gets weighed. Each of your three meals just has to contain both. That's the entire rule, and it's the one that quietly changes your afternoons.</p>
+      </div>
+      <div class="rule-row">
+        <span class="idx">05</span>
+        <div><h3>Fifteen minutes of movement</h3><div class="spec">15 MIN · ANY KIND · EVERY DAY</div></div>
+        <p class="why">A walk counts. So does stretching on the kitchen floor. Fifteen minutes is small on purpose — small enough that there's no honest excuse on a bad day.</p>
+      </div>
+      <div class="rule-row">
+        <span class="idx">06</span>
+        <div><h3>Ten minutes reading and writing</h3><div class="spec">10 MIN · PAGE AND PEN · SPLIT AS YOU LIKE</div></div>
+        <p class="why">Read something, then write something — a few unedited lines about the day. Ten minutes covers both, and the writing is the half that does the work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mechanic">
+  <div class="wrap mech">
+    <div class="mech-copy">
+      <span class="eyebrow">The rule that does the work</span>
+      <p class="pull" style="margin-top:14px">Miss anything and the counter goes back to <em>Day 1</em>.</p>
+      <p>Not a strike system. Not a grace day. Six for six, or you start the board again tomorrow morning. It sounds harsh until about Day 9, when you notice the internal argument has stopped — because there's no version of the day where skipping one is cheap.</p>
+      <p>Watch what it looks like. Fill the board, then miss one.</p>
+      <button class="btn ghost" id="demoBtn">Run 12 days, then miss one</button>
+    </div>
+    <div class="mech-card">
+      <div class="grid75" id="grid75" aria-label="75-day board"></div>
+      <div class="grid-legend">
+        <span class="lg"><span class="sw" style="background:var(--mint)"></span>Logged</span>
+        <span class="lg"><span class="sw" style="background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--accent)"></span>Today</span>
+        <span class="lg"><span class="sw" style="background:var(--surface-2)"></span>Ahead of you</span>
+        <span class="lg mono" id="gridStat" style="margin-left:auto">0 / 75 logged</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What the 75 days actually feel like</span>
+      <h2>The shape of it, in order.</h2>
+      <p>Reported by people who finished. The middle is longer than you expect and quieter than you'd like.</p>
+    </div>
+    <div class="phases">
+      <div class="phase"><span class="bar" style="width:100%"></span><div class="days">DAYS 1–7</div><h3>Friction</h3><p>The wake time and the water are the whole battle. You're rebuilding a morning — it's a logistics problem, not a willpower one.</p></div>
+      <div class="phase"><span class="bar" style="width:78%"></span><div class="days">DAYS 8–21</div><h3>Scaffolding</h3><p>The first three items start running themselves before breakfast. First real restarts happen here, usually on a travel day.</p></div>
+      <div class="phase"><span class="bar" style="width:56%"></span><div class="days">DAYS 22–45</div><h3>The quiet middle</h3><p>Motivation is gone and nothing dramatic is happening. The checklist is the only thing carrying you, which is the skill.</p></div>
+      <div class="phase"><span class="bar" style="width:34%"></span><div class="days">DAYS 46–65</div><h3>Payoff</h3><p>You wake before the alarm. The 3pm crash stops arriving. This is the part people mean by "20 again."</p></div>
+      <div class="phase"><span class="bar" style="width:16%"></span><div class="days">DAYS 66–75</div><h3>Don't get cute</h3><p>More people restart in the last ten days than the first ten. Finish the list exactly as written and don't start improvising.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Before you commit</span>
+      <h2>Pick a start date and look at the finish.</h2>
+      <p>Seventy-five days is a season. Check what you're signing up to sit through — holidays, travel, a wedding — before Day 1, not on Day 40.</p>
+    </div>
+    <div class="planner">
+      <div class="pane">
+        <label class="field" for="startDate">Your Day 1</label>
+        <input type="date" id="startDate">
+        <p style="font-size:15px;color:var(--ink-2);margin-top:14px">Most people start on a Monday. Nobody's ever regretted starting on a Tuesday.</p>
+      </div>
+      <div class="pane">
+        <div class="result">
+          <span class="k">Day 75 lands on</span>
+          <span class="v" id="endDate">—</span>
+          <span class="sub" id="endSub">—</span>
+        </div>
+        <div class="result" style="margin-top:20px">
+          <span class="k">You'll be sitting through</span>
+          <span class="sub" id="spanNote" style="font-family:var(--f-body);font-size:16px;color:var(--ink-2)">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What you get</span>
+      <h2>Four things, and they're yours to keep.</h2>
+    </div>
+    <div class="offer">
+      <ul class="incl">
+        <li><span class="tick">✓</span><span><b>Your board</b> — the daily checklist and 75-day grid you just used, as <a href="/app/" style="color:inherit">your own page</a> you install on your phone. It keeps your day count, and it enforces the reset rule so you can't quietly fudge a day.</span></li>
+        <li><span class="tick">✓</span><span><b>The daily journal guide</b> — what to actually write in your ten minutes. A prompt for every day of the 75, so the page is never blank and the writing doesn't turn into a diary you abandon on Day 6.</span></li>
+        <li><span class="tick">✓</span><span><b>Daily movement recommendations</b> — fifteen minutes, prescribed. Walks, mobility, strength, recovery days, and what to do when you're travelling or wrecked. No gym required, no guessing.</span></li>
+        <li><span class="tick">✓</span><span><b>The fiber + protein guide</b> — how to get both into three meals a day without counting anything, with the grocery staples that make it automatic and the Shaklee products we use to fill the gaps. <span style="color:var(--ink-3)">We earn a commission on Shaklee orders; the guide works exactly the same if you skip them.</span></span></li>
+      </ul>
+      <div class="price-card">
+        <span class="eyebrow">One payment, then it's yours</span>
+        <div class="amt">$14.99</div>
+        <div class="per">one-time · all 75 days · no subscription</div>
+        <ul>
+          <li>START ANY DAY</li>
+          <li>INSTANT ACCESS</li>
+          <li>KEEP ALL FOUR GUIDES</li>
+        </ul>
+        <a class="btn js-buy" href="#join">Join for $14.99</a>
+        <p class="fine">Restart as many times as you need inside your 75 days — the board and the guides don't expire, and there's nothing to cancel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Straight answers</span>
+      <h2>The questions everyone asks on Day 0.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary><span>Do I really go back to Day 1 for one missed item?</span></summary>
+        <p>Yes. That's the entire mechanism — the moment there's partial credit, the list becomes a suggestion and your evening starts negotiating. The upside is that the decision disappears: there's nothing to weigh up, you just do the six.</p>
+      </details>
+      <details>
+        <summary><span>These all look easy. Where's the catch?</span></summary>
+        <p>Each one is easy. Six of them, on the day your flight is delayed and you slept badly, is not. The program isn't testing whether you can do fifteen minutes of movement — it's testing whether you can do it 75 times without a single exception, which is a completely different skill and the only one that transfers.</p>
+      </details>
+      <details>
+        <summary><span>What counts as grounding?</span></summary>
+        <p>Anything deliberate and unplugged: breathwork, a sit, stretching in silence, standing outside with coffee and no phone. You name yours on Day 0 and keep it for the full 75 so it becomes a place you go rather than a decision you make.</p>
+      </details>
+      <details>
+        <summary><span>Is this safe for me?</span></summary>
+        <p>Talk to your doctor before you start — 100 oz of water a day and a change in how you eat are real changes, and neither is right for everyone. Bring the six rules to the appointment; they're easy to adjust with a professional and much harder to adjust halfway through.</p>
+      </details>
+      <details>
+        <summary><span>Who is this not for?</span></summary>
+        <p>Anyone who'd use a strict daily rule to punish themselves rather than build something. If a missed day would send you somewhere dark, this format is the wrong tool and a gentler habit program will get you further.</p>
+      </details>
+      <details>
+        <summary><span>Most people restart, don't they?</span></summary>
+        <p>Most people restart at least once, and finishers restart an average of twice. It isn't failure — it's the cost of a standard that means something. What separates finishers is what they do the next morning — which is why the journal guide has a prompt written for exactly that morning.</p>
+      </details>
+      <details>
+        <summary><span>What happens on Day 76?</span></summary>
+        <p>You keep the two or three items that changed your life and drop the scaffolding. The last week of the program is spent deciding which ones those are, so you don't wake up on Day 76 with nothing to do.</p>
+      </details>
+    </div>
+
+    <div class="safety">
+      <p><b>One honest note.</b> This is built for consistency, not for punishment. The rules are strict so you stop deliberating — not so you can prove something to yourself by suffering. If it ever starts feeling like the second thing, put the board down. It'll still be there when it's the first thing again.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p>75 DAY BETTER — SIX RULES · SEVENTY-FIVE DAYS · NO PARTIAL CREDIT<br>Not medical advice. Talk to your doctor before starting.</p>
+    <a class="btn ghost js-anchor" href="#join">Start Day 1</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ITEMS=[
+    {t:"Woke at my set time",s:"SET TIME"},
+    {t:"Ten minutes of grounding",s:"10 MIN"},
+    {t:"100 oz of water",s:"100 OZ"},
+    {t:"Fiber + protein, three meals",s:"3 × BOTH"},
+    {t:"Fifteen minutes of movement",s:"15 MIN"},
+    {t:"Ten minutes reading + writing",s:"10 MIN"}
+  ];
+
+  var state={day:1,checks:[false,false,false,false,false,false]};
+
+  try{
+    var raw=localStorage.getItem("d75_state");
+    if(raw){
+      var p=JSON.parse(raw);
+      if(p&&typeof p.day==="number"&&Array.isArray(p.checks)&&p.checks.length===6){
+        state.day=Math.min(Math.max(1,p.day),75);
+        state.checks=p.checks.map(Boolean);
+      }
+    }
+  }catch(e){}
+
+  function save(){
+    try{localStorage.setItem("d75_state",JSON.stringify(state));}catch(e){}
+  }
+
+  var listEl=document.getElementById("checklist");
+  var dayEl=document.getElementById("dayNum");
+  var doneEl=document.getElementById("doneCount");
+  var footEl=document.getElementById("footMsg");
+  var logBtn=document.getElementById("logBtn");
+  var missBtn=document.getElementById("missBtn");
+  var gridEl=document.getElementById("grid75");
+  var gridStat=document.getElementById("gridStat");
+  var demoBtn=document.getElementById("demoBtn");
+
+  var CHECK_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.2 5.2L20 7"/></svg>';
+
+  ITEMS.forEach(function(it,i){
+    var li=document.createElement("li");
+    var b=document.createElement("button");
+    b.className="check";
+    b.type="button";
+    b.setAttribute("aria-pressed","false");
+    b.innerHTML='<span class="box">'+CHECK_SVG+'</span><span class="check-label"></span><span class="check-spec">'+it.s+'</span>';
+    b.querySelector(".check-label").textContent=it.t;
+    b.addEventListener("click",function(){
+      state.checks[i]=!state.checks[i];
+      save();render();
+    });
+    li.appendChild(b);
+    listEl.appendChild(li);
+  });
+
+  var cells=[];
+  for(var d=1;d<=75;d++){
+    var c=document.createElement("div");
+    c.className="cell";
+    c.textContent=d;
+    gridEl.appendChild(c);
+    cells.push(c);
+  }
+
+  function pad(n){return n<10?"0"+n:""+n;}
+
+  function render(){
+    var n=state.checks.filter(Boolean).length;
+    var btns=listEl.querySelectorAll(".check");
+    for(var i=0;i<btns.length;i++){
+      btns[i].setAttribute("aria-pressed",state.checks[i]?"true":"false");
+    }
+    dayEl.textContent=pad(state.day);
+    doneEl.textContent=n+" of 6 done";
+    logBtn.disabled=n<6;
+    if(n===6){
+      footEl.textContent="Six for six. Log it.";
+      footEl.classList.remove("warn");
+    }else if(n===0){
+      footEl.textContent=state.day>1?("Day "+state.day+". Nothing ticked yet."):"Try it — tick all six to log the day.";
+      footEl.classList.remove("warn");
+    }else{
+      footEl.textContent=(6-n)+" left. Partial days don't count.";
+      footEl.classList.remove("warn");
+    }
+    renderGrid();
+  }
+
+  function renderGrid(){
+    var logged=state.day-1;
+    for(var i=0;i<75;i++){
+      var c=cells[i];
+      c.className="cell"+(i<logged?" done":(i===logged?" today":""));
+    }
+    gridStat.textContent=logged+" / 75 logged";
+  }
+
+  logBtn.addEventListener("click",function(){
+    if(state.checks.filter(Boolean).length<6) return;
+    if(state.day>=75){
+      footEl.textContent="Day 75 logged. That's the whole board.";
+      footEl.classList.remove("warn");
+      return;
+    }
+    state.day+=1;
+    state.checks=[false,false,false,false,false,false];
+    save();render();
+    footEl.textContent="Day "+pad(state.day-1)+" logged. On to Day "+pad(state.day)+".";
+  });
+
+  function wipe(then){
+    var logged=state.day-1;
+    if(logged<1){ then(); return; }
+    var i=logged-1;
+    var timer=setInterval(function(){
+      if(i<0){clearInterval(timer);then();return;}
+      cells[i].className="cell wipe";
+      i--;
+    },26);
+    setTimeout(function(){},0);
+  }
+
+  function doMiss(){
+    wipe(function(){
+      state.day=1;
+      state.checks=[false,false,false,false,false,false];
+      save();
+      setTimeout(function(){
+        render();
+        footEl.textContent="Back to Day 1. That's the deal.";
+        footEl.classList.add("warn");
+      },380);
+    });
+  }
+
+  missBtn.addEventListener("click",doMiss);
+
+  demoBtn.addEventListener("click",function(){
+    demoBtn.disabled=true;
+    state.day=1;state.checks=[false,false,false,false,false,false];render();
+    var d=1;
+    var t=setInterval(function(){
+      if(d>12){
+        clearInterval(t);
+        setTimeout(function(){
+          doMiss();
+          setTimeout(function(){demoBtn.disabled=false;},1400);
+        },420);
+        return;
+      }
+      state.day=d+1;d++;
+      save();render();
+    },130);
+  });
+
+  /* ---- start-date planner ---- */
+  var startEl=document.getElementById("startDate");
+  var endEl=document.getElementById("endDate");
+  var endSub=document.getElementById("endSub");
+  var spanNote=document.getElementById("spanNote");
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  function fmtISO(dt){
+    return dt.getFullYear()+"-"+pad(dt.getMonth()+1)+"-"+pad(dt.getDate());
+  }
+
+  function updatePlan(){
+    var v=startEl.value;
+    if(!v){endEl.textContent="—";endSub.textContent="—";spanNote.textContent="—";return;}
+    var parts=v.split("-");
+    var start=new Date(+parts[0],+parts[1]-1,+parts[2]);
+    if(isNaN(start.getTime())){return;}
+    var end=new Date(start.getTime());
+    end.setDate(end.getDate()+74);
+    endEl.textContent=DAYS[end.getDay()]+", "+MONTHS[end.getMonth()]+" "+end.getDate();
+    endSub.textContent=end.getFullYear()+" · 74 DAYS AFTER YOUR DAY 1";
+
+    var months=[];
+    var cur=new Date(start.getTime());
+    while(cur<=end){
+      var label=MONTHS[cur.getMonth()];
+      if(months.indexOf(label)===-1)months.push(label);
+      cur.setDate(cur.getDate()+1);
+    }
+    var last=months.pop();
+    spanNote.textContent=(months.length? months.join(", ")+" and "+last : last)+" — start on a "+DAYS[start.getDay()]+", finish on a "+DAYS[end.getDay()]+".";
+  }
+
+  var today=new Date();
+  startEl.value=fmtISO(today);
+  startEl.addEventListener("change",updatePlan);
+  startEl.addEventListener("input",updatePlan);
+
+  render();
+  updatePlan();
+})();
+</script>
+
+<script>
+/* ============================================================
+   CHECKOUT LINK — paste your Stripe payment link here.
+   This one string controls every "join / buy" button on the site.
+   ============================================================ */
+var CHECKOUT_URL = "https://buy.stripe.com/REPLACE_WITH_YOUR_LINK";
+
+(function(){
+  var live = CHECKOUT_URL.indexOf("REPLACE_WITH") === -1;
+  if (live){
+    var buys = document.querySelectorAll(".js-buy");
+    for (var i=0;i<buys.length;i++){ buys[i].href = CHECKOUT_URL; }
+  }
+  if ('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>
