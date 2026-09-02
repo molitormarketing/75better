@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>75 Day Better</title>
+<meta name="description" content="Your 75 Day Better board — six things a day, every day.">
+<meta name="theme-color" content="#2F4438" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A241E" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="75 Better">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --bg:#EAEFEA; --bg-tint:#E1E7E1; --surface:#FFFFFF; --surface-2:#DEE2DD;
+  --ink:#26362C; --ink-2:#57685C; --ink-3:#87958B;
+  --rule:#D3DAD3; --rule-strong:#B4BFB6;
+  --accent:#2F4438; --accent-ink:#FFFFFF;
+  --mint:#A9DC9E; --mint-ink:#26362C; --drain:#DEDEDE;
+  --shadow:0 1px 0 rgba(47,68,56,.08), 0 12px 26px -18px rgba(47,68,56,.5);
+  --grid-line:rgba(47,68,56,.055);
+  --f-display:"Archivo Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A241E; --bg-tint:#1F2A23; --surface:#222E27; --surface-2:#2B3830;
+    --ink:#EAEFEA; --ink-2:#A8B5AC; --ink-3:#7F8D84;
+    --rule:#33423A; --rule-strong:#4A5B51;
+    --accent:#A9DC9E; --accent-ink:#1A241E;
+    --mint:#A9DC9E; --mint-ink:#1A241E; --drain:#3B4842;
+    --shadow:0 1px 0 rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.9);
+    --grid-line:rgba(234,239,234,.045);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A241E; --bg-tint:#1F2A23; --surface:#222E27; --surface-2:#2B3830;
+  --ink:#EAEFEA; --ink-2:#A8B5AC; --ink-3:#7F8D84;
+  --rule:#33423A; --rule-strong:#4A5B51;
+  --accent:#A9DC9E; --accent-ink:#1A241E;
+  --mint:#A9DC9E; --mint-ink:#1A241E; --drain:#3B4842;
+  --shadow:0 1px 0 rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.9);
+  --grid-line:rgba(234,239,234,.045);
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{
+  margin:0;background:var(--bg);
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:26px 26px;
+  color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 56px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em}
+p{margin:0}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:2px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0 14px}
+.brand{font-family:var(--f-display);font-size:15px;letter-spacing:-.02em}
+.chip{
+  font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:5px 11px;color:var(--ink-2);
+}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow);overflow:hidden}
+.card+.card{margin-top:16px}
+
+.daybar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px;border-bottom:1px solid var(--rule);background:var(--surface-2)}
+.daybar .n{font-family:var(--f-display);font-size:52px;line-height:.8;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.daybar .of{font-family:var(--f-mono);font-size:13px;color:var(--ink-2);margin-left:6px}
+.daybar .right{text-align:right;display:flex;flex-direction:column;gap:4px}
+.daybar .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.daybar .v{font-family:var(--f-mono);font-size:13.5px;font-weight:600}
+
+.banner{padding:13px 18px;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.03em;border-bottom:1px solid var(--rule);display:none}
+.banner.show{display:block}
+.banner.reset{background:var(--drain);color:var(--ink)}
+.banner.win{background:var(--mint);color:var(--mint-ink);font-weight:600}
+
+ul.checklist{list-style:none;margin:0;padding:0}
+.check{
+  display:grid;grid-template-columns:26px 1fr auto;gap:13px;align-items:center;
+  padding:15px 18px;border:0;border-bottom:1px solid var(--rule);width:100%;
+  background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;transition:background .14s ease;
+}
+.check:active{background:var(--bg-tint)}
+.box{width:23px;height:23px;border:1.5px solid var(--rule-strong);border-radius:3px;background:var(--bg);
+  display:grid;place-items:center;flex:none;transition:all .16s ease}
+.box svg{width:14px;height:14px;stroke:var(--mint-ink);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  opacity:0;transform:scale(.6);transition:all .16s ease}
+.check[aria-pressed="true"] .box{background:var(--mint);border-color:var(--mint)}
+.check[aria-pressed="true"] .box svg{opacity:1;transform:scale(1)}
+.lbl{font-size:16.5px;line-height:1.3}
+.check[aria-pressed="true"] .lbl{color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--rule-strong)}
+.spec{font-family:var(--f-mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em;white-space:nowrap}
+
+.actions{padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.btn{
+  font-family:var(--f-mono);font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  padding:15px 16px;border-radius:3px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);
+  cursor:pointer;text-align:center;text-decoration:none;display:block;transition:filter .12s ease}
+.btn:active{filter:brightness(1.12)}
+.btn:disabled{opacity:.38;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.hint{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);text-align:center;letter-spacing:.03em;line-height:1.6}
+
+.gridhead{display:flex;align-items:baseline;justify-content:space-between;padding:16px 18px 12px}
+.gridhead h2{font-size:15px}
+.gridhead .stat{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2)}
+.grid75{display:grid;grid-template-columns:repeat(15,1fr);gap:4px;padding:0 18px 18px}
+@media(max-width:480px){.grid75{grid-template-columns:repeat(10,1fr)}}
+.cell{aspect-ratio:1;border-radius:2px;background:var(--surface-2);display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:9px;color:var(--ink-3);transition:background .2s ease,color .2s ease,transform .2s ease}
+.cell.done{background:var(--mint);color:var(--mint-ink)}
+.cell.today{background:var(--surface);color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.cell.wipe{background:var(--drain);color:var(--ink-3);transform:scale(.84)}
+
+.meta{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.meta div{padding:14px 18px}
+.meta div+div{border-left:1px solid var(--rule)}
+.meta .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.meta .v{font-family:var(--f-mono);font-size:14px;margin-top:4px}
+
+.install{background:var(--surface);border:1px dashed var(--rule-strong);border-radius:4px;padding:16px 18px;margin-top:16px;display:none}
+.install.show{display:block}
+.install h3{font-size:15px;margin-bottom:7px}
+.install p{font-size:15px;color:var(--ink-2)}
+.install .btn{margin-top:12px}
+
+.foot{margin-top:22px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.linkbtn{background:none;border:0;font:inherit;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.linkbtn:hover{color:var(--ink)}
+a.linkbtn{display:inline-block}
+@media (prefers-reduced-motion: reduce){*{transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="brand">75 DAY BETTER</span>
+    <span class="chip" id="chip">Day 1</span>
+  </div>
+
+  <div class="card">
+    <div class="daybar">
+      <div><span class="n mono" id="dayNum">01</span><span class="of">/ 75</span></div>
+      <div class="right">
+        <span class="k" id="dateK">Today</span>
+        <span class="v mono" id="dateV">—</span>
+      </div>
+    </div>
+
+    <div class="banner" id="banner"></div>
+
+    <ul class="checklist" id="checklist"></ul>
+
+    <div class="actions">
+      <button class="btn" id="logBtn" disabled>Log day</button>
+      <p class="hint" id="hint">Tick all six. Partial days don't count.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="gridhead">
+      <h2>The board</h2>
+      <span class="stat mono" id="stat">0 / 75</span>
+    </div>
+    <div class="grid75" id="grid"></div>
+    <div class="meta">
+      <div><div class="k">Started</div><div class="v" id="startedV">—</div></div>
+      <div><div class="k">Restarts</div><div class="v" id="restartsV">0</div></div>
+    </div>
+  </div>
+
+  <div class="install" id="install">
+    <h3>Put this on your home screen</h3>
+    <p id="installCopy">Tap the Share button, then <b>Add to Home Screen</b>. It opens full screen, works without signal, and your board stays put.</p>
+    <button class="btn" id="installBtn" style="display:none">Install</button>
+  </div>
+
+  <div class="foot">
+    <a class="linkbtn" href="/">The six rules &amp; guides</a>
+    <button class="linkbtn" id="restartBtn">Start over at Day 1</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ITEMS=[
+    {t:"Woke at my set time",s:"SET TIME"},
+    {t:"Ten minutes of grounding",s:"10 MIN"},
+    {t:"100 oz of water",s:"100 OZ"},
+    {t:"Fiber + protein, three meals",s:"3 × BOTH"},
+    {t:"Fifteen minutes of movement",s:"15 MIN"},
+    {t:"Ten minutes reading + writing",s:"10 MIN"}
+  ];
+  var KEY="d75_v1";
+  var MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+  function pad(n){return n<10?"0"+n:""+n;}
+  function iso(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+  function parseISO(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+  function daysBetween(a,b){return Math.round((parseISO(b)-parseISO(a))/86400000);}
+  function pretty(s){var d=parseISO(s);return DAYS[d.getDay()]+" "+MONTHS[d.getMonth()]+" "+d.getDate();}
+
+  var today=iso(new Date());
+
+  var st={start:null,day:1,lastLogged:null,checksDate:today,checks:[0,0,0,0,0,0],restarts:0};
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){var p=JSON.parse(raw);if(p&&typeof p==="object"){
+      st.start=p.start||null;
+      st.day=Math.min(Math.max(1,p.day||1),75);
+      st.lastLogged=p.lastLogged||null;
+      st.checksDate=p.checksDate||today;
+      st.checks=(Array.isArray(p.checks)&&p.checks.length===6)?p.checks.map(function(v){return v?1:0}):[0,0,0,0,0,0];
+      st.restarts=p.restarts||0;
+    }}
+  }catch(e){}
+
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+
+  var didReset=false, finished=false;
+
+  function rollover(){
+    if(!st.start){ return; }                       // not started yet
+    if(st.lastLogged===today) return;              // already logged today
+    if(st.lastLogged===null){
+      // started but never logged: only day 1 is still open, and only on the start date
+      if(st.start!==today){ doReset(); }
+      return;
+    }
+    var gap=daysBetween(st.lastLogged,today);
+    if(gap===1){
+      if(st.day>=75){ finished=true; return; }
+      st.day+=1;
+      st.checks=[0,0,0,0,0,0];
+      st.checksDate=today;
+      save();
+    }else if(gap>1){
+      doReset();
+    }
+  }
+
+  function doReset(){
+    st.restarts+=1;
+    st.day=1;
+    st.start=today;
+    st.lastLogged=null;
+    st.checks=[0,0,0,0,0,0];
+    st.checksDate=today;
+    didReset=true;
+    save();
+  }
+
+  if(st.checksDate!==today){ st.checks=[0,0,0,0,0,0]; st.checksDate=today; }
+  rollover();
+  if(st.day>=75 && st.lastLogged===today) finished=true;
+
+  /* ---- build UI ---- */
+  var listEl=document.getElementById("checklist");
+  var CHECK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.2 5.2L20 7"/></svg>';
+  ITEMS.forEach(function(it,i){
+    var li=document.createElement("li");
+    var b=document.createElement("button");
+    b.className="check";b.type="button";b.setAttribute("aria-pressed","false");
+    b.innerHTML='<span class="box">'+CHECK+'</span><span class="lbl"></span><span class="spec">'+it.s+'</span>';
+    b.querySelector(".lbl").textContent=it.t;
+    b.addEventListener("click",function(){
+      if(!st.start){ st.start=today; }
+      if(st.lastLogged===today) return;
+      st.checks[i]=st.checks[i]?0:1;
+      st.checksDate=today;save();render();
+    });
+    li.appendChild(b);listEl.appendChild(li);
+  });
+
+  var gridEl=document.getElementById("grid"),cells=[];
+  for(var d=1;d<=75;d++){
+    var c=document.createElement("div");c.className="cell";c.textContent=d;
+    gridEl.appendChild(c);cells.push(c);
+  }
+
+  var dayNum=document.getElementById("dayNum"),chip=document.getElementById("chip"),
+      dateV=document.getElementById("dateV"),banner=document.getElementById("banner"),
+      logBtn=document.getElementById("logBtn"),hint=document.getElementById("hint"),
+      stat=document.getElementById("stat"),startedV=document.getElementById("startedV"),
+      restartsV=document.getElementById("restartsV");
+
+  function completedDays(){
+    if(!st.start) return 0;
+    return st.lastLogged===today ? st.day : st.day-1;
+  }
+
+  function render(){
+    var n=0;for(var i=0;i<6;i++) n+=st.checks[i]?1:0;
+    var btns=listEl.querySelectorAll(".check");
+    for(var j=0;j<6;j++) btns[j].setAttribute("aria-pressed",st.checks[j]?"true":"false");
+
+    dayNum.textContent=pad(st.day);
+    chip.textContent=st.lastLogged===today?"Day "+st.day+" logged":"Day "+st.day;
+    dateV.textContent=pretty(today);
+
+    var loggedToday=(st.lastLogged===today);
+    logBtn.disabled=loggedToday||n<6;
+    logBtn.textContent=loggedToday?"Logged":"Log day";
+
+    if(finished){
+      hint.textContent="Seventy-five for seventy-five.";
+    }else if(loggedToday){
+      hint.textContent="Done for today. Day "+(st.day+1)+" opens tomorrow.";
+    }else if(n===6){
+      hint.textContent="Six for six. Log it.";
+    }else{
+      hint.textContent=(6-n)+" left. Partial days don't count.";
+    }
+
+    banner.className="banner";
+    if(finished){ banner.classList.add("show","win"); banner.textContent="DAY 75 COMPLETE — YOU FINISHED THE BOARD."; }
+    else if(didReset){ banner.classList.add("show","reset"); banner.textContent="A DAY WAS MISSED. BACK TO DAY 1 — THAT'S THE DEAL."; }
+
+    var done=completedDays();
+    for(var k=0;k<75;k++){
+      cells[k].className="cell"+(k<done?" done":(k===done&&!finished?" today":""));
+    }
+    stat.textContent=done+" / 75";
+    startedV.textContent=st.start?pretty(st.start):"—";
+    restartsV.textContent=st.restarts;
+  }
+
+  logBtn.addEventListener("click",function(){
+    var n=0;for(var i=0;i<6;i++) n+=st.checks[i]?1:0;
+    if(n<6||st.lastLogged===today) return;
+    if(!st.start) st.start=today;
+    st.lastLogged=today;
+    didReset=false;
+    if(st.day>=75) finished=true;
+    save();render();
+  });
+
+  document.getElementById("restartBtn").addEventListener("click",function(){
+    var done=completedDays();
+    var i=done-1;
+    if(i>=0){
+      var t=setInterval(function(){
+        if(i<0){clearInterval(t);return;}
+        cells[i].className="cell wipe";i--;
+      },22);
+    }
+    setTimeout(function(){
+      st.restarts+=1;st.day=1;st.start=today;st.lastLogged=null;
+      st.checks=[0,0,0,0,0,0];st.checksDate=today;finished=false;didReset=true;
+      save();render();
+    },Math.min(700,Math.max(220,done*24)));
+  });
+
+  /* ---- install prompt ---- */
+  var installEl=document.getElementById("install"),
+      installBtn=document.getElementById("installBtn"),
+      installCopy=document.getElementById("installCopy");
+  var standalone=window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===true;
+  var deferred=null;
+  window.addEventListener("beforeinstallprompt",function(e){
+    e.preventDefault();deferred=e;
+    installCopy.textContent="One tap and it lives on your home screen — full screen, and it works without signal.";
+    installBtn.style.display="block";
+    installEl.classList.add("show");
+  });
+  installBtn.addEventListener("click",function(){
+    if(!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function(){deferred=null;installEl.classList.remove("show");});
+  });
+  if(!standalone){
+    var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+    if(ios){ installEl.classList.add("show"); }
+    else { setTimeout(function(){ if(!deferred) installEl.classList.add("show"); },1200); }
+  }
+
+  render();
+
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});
+  }
+})();
+</script>
+</body>
+</html>
