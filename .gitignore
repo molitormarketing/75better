@@ -1,0 +1,3 @@
+.DS_Store
+*.min
+node_modules/
