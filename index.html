@@ -148,7 +148,9 @@ h1{font-size:clamp(38px,6.2vw,66px);line-height:.96;letter-spacing:-.025em;margi
 h1 .thin{display:block;font-family:var(--f-body);font-weight:400;font-style:italic;
   font-size:clamp(20px,2.6vw,27px);line-height:1.25;letter-spacing:0;color:var(--ink-2);margin-top:16px}
 .lede{margin-top:22px;font-size:19px;line-height:1.55;max-width:34em;color:var(--ink)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
+.hero-cta .subtle{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);text-decoration:underline;text-underline-offset:3px}
+.hero-cta .subtle:hover{color:var(--ink-2)}
 .stamp{
   display:inline-flex;gap:8px;align-items:center;font-family:var(--f-mono);font-size:11.5px;
   letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);
@@ -316,8 +318,8 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
   <div class="wrap">
     <div class="mark"><b>75 DAY BETTER</b><span>Est. Day 1</span></div>
     <div class="mh-right">
-      <span class="mh-note">Free tracker · guides $14.99</span>
-      <a class="btn sm js-anchor" href="#join">Join</a>
+      <span class="mh-note">$14.99 · one time · start any day</span>
+      <a class="btn sm js-anchor" href="#join">Start</a>
     </div>
   </div>
 </header>
@@ -332,9 +334,9 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
       </h1>
       <p class="lede">Not a bootcamp and not a diet. Six small things — none of them longer than fifteen minutes — held to a standard strict enough that your brain stops negotiating with them.</p>
       <div class="hero-cta">
-        <a class="btn" href="/app/">Open the free tracker</a>
-        <a class="btn ghost js-anchor" href="#join">Get the guides — $14.99</a>
+        <a class="btn js-buy" href="#join">Start for $14.99</a>
         <span class="stamp">No partial credit</span>
+        <a class="subtle" href="/app/">or look at the board first</a>
       </div>
     </div>
 
@@ -470,16 +472,16 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
 <section id="join">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">The guides</span>
-      <h2>The tracker is free. These three are what you buy.</h2>
-      <p>Two hundred and twenty-five written entries — one set for every day of the program, three times over. Sent to your inbox as PDFs when you check out.</p>
+      <span class="eyebrow">What you get</span>
+      <h2>Everything the 75 days asks of you, written down.</h2>
+      <p>Two hundred and twenty-five entries — one set for every day of the program, three times over — plus the board you tick them off on.</p>
     </div>
     <div class="offer">
       <ul class="incl">
         <li><span class="tick">✓</span><span><b>The 75 Day Better Journal</b> — a written prompt for every one of the 75 days, mapped to the arc of the program: the friction of week one, the quiet middle, the last ten days when people get cute. Plus seven restart-morning prompts for the day after you break a streak, which is the set that decides whether you finish.</span></li>
         <li><span class="tick">✓</span><span><b>Fifteen Minutes</b> — 75 movement sessions, one a day. Walks, mobility, strength, recovery. No gym and nothing beyond a chair, a wall and a door frame, scaled three ways so a gentle day counts exactly the same as a hard one. Includes escape hatches for travelling, soreness, and the days you are wrecked.</span></li>
         <li><span class="tick">✓</span><span><b>Fiber and Protein, Three Times a Day</b> — 75 meal ideas across breakfast, lunch and dinner, plus the staples list and the twenty-minute Sunday prep that make the rule automatic. Nothing weighed, nothing forbidden. <span style="color:var(--ink-3)">Includes Bryson's supplement picks, which we earn a commission on; every idea in the guide works without them.</span></span></li>
-        <li><span class="tick" style="color:var(--ink-3)">○</span><span><b>The tracker stays free</b> — the board is open to everyone, before and after you buy. You are paying for the 225 entries, not for permission to tick boxes.</span></li>
+        <li><span class="tick">✓</span><span><b>The board</b> — the daily checklist and 75-day grid, installed to your phone's home screen. It knows what day you're on, clears itself each morning, and enforces the reset rule so you can't quietly fudge a day.</span></li>
       </ul>
       <div class="price-card">
         <span class="eyebrow">Three guides, one payment</span>
@@ -490,8 +492,8 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
           <li>EMAILED AT CHECKOUT</li>
           <li>YOURS TO KEEP</li>
         </ul>
-        <a class="btn js-buy" href="#join">Get the guides — $14.99</a>
-        <p class="fine">Sent to the email address you check out with. No subscription and nothing to cancel — and the tracker stays free whether you buy or not.</p>
+        <a class="btn js-buy" href="#join">Start for $14.99</a>
+        <p class="fine">The guides arrive at the email address you check out with. One payment, no subscription, nothing to cancel.</p>
       </div>
     </div>
   </div>
@@ -525,8 +527,8 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
         <p>Three PDFs, emailed at checkout: 75 journal prompts, 75 fifteen-minute movement sessions, and 75 fiber-and-protein meal ideas. Two hundred and twenty-five entries, one set for each day. The tracker is free and always was — you are buying the content, not the checkbox.</p>
       </details>
       <details>
-        <summary><span>Do I have to buy anything to do the program?</span></summary>
-        <p>No. The six rules are on this page and the tracker is free to use. The guides exist because "read something and write something" is easy to say and hard to do at 9pm on Day 40 in front of a blank page — but people will finish without them, and we would rather say that than pretend otherwise.</p>
+        <summary><span>Can I look at the board before I buy?</span></summary>
+        <p>Yes — it's open, and you can tick a day on it right now without paying anyone. The guides are the part you're buying: "read something and write something" is easy to say and hard to do at 9pm on Day 40 in front of a blank page, and that's the problem 225 written entries solve.</p>
       </details>
       <details>
         <summary><span>Who is this not for?</span></summary>
@@ -552,7 +554,7 @@ details p{padding:0 0 20px;color:var(--ink-2);max-width:66ch;font-size:16.5px}
 <footer class="foot">
   <div class="wrap foot-inner">
     <p>75 DAY BETTER — SIX RULES · SEVENTY-FIVE DAYS · NO PARTIAL CREDIT<br>Not medical advice. Talk to your doctor before starting.</p>
-    <a class="btn ghost js-anchor" href="#join">Start Day 1</a>
+    <a class="btn ghost js-buy" href="#join">Start for $14.99</a>
   </div>
 </footer>
 
